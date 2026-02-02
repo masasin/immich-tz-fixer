@@ -45,14 +45,14 @@ Verify API connectivity and authentication:
 Analyze a specific date range and preview changes without modifying the database:
 
 ```bash
-./immich_tz_fixer.py --taken-after 2024-01-01 --taken-before 2024-12-31 --interpolate --method FF --dry-run
+./immich_tz_fixer.py --start 2024-01-01 --end 2024-12-31 --interpolate --method FF --dry-run
 ```
 
 ### Applying Fixes
 Apply timezone corrections to all assets within a range:
 
 ```bash
-./immich_tz_fixer.py --taken-after 2023-05-19 --fix
+./immich_tz_fixer.py --start 2023-05-19 --fix
 ```
 
 Or to all files:

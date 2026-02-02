@@ -328,8 +328,8 @@ def process_updates(
 @app.default
 def main(
     filename: Annotated[str | None, Parameter(group="Filtering")] = None,
-    taken_after: Annotated[datetime | None, Parameter(name="--taken-after", group="Filtering")] = None,
-    taken_before: Annotated[datetime | None, Parameter(name="--taken-before", group="Filtering")] = None,
+    taken_after: Annotated[datetime | None, Parameter(name="--start", group="Filtering")] = None,
+    taken_before: Annotated[datetime | None, Parameter(name="--end", group="Filtering")] = None,
     interpolate: Annotated[bool, Parameter(name="--interpolate", group="Interpolation")] = False,
     method: Annotated[Literal["NN", "FF"], Parameter(name="--method", group="Interpolation")] = "NN",
     check_conn: Annotated[bool, Parameter(name="--check-conn", group="Troubleshooting")] = False,
@@ -340,6 +340,8 @@ def main(
     Immich Timezone Fixer.
     
     Args:
+        taken_after: The start date or datetime of the range to filter for.
+        taken_before: The end date or datetime of the range to filter for.
         interpolate: Enable coordinate interpolation. Defaults to Nearest Neighbor (NN).
         method: Interpolation method: "NN" (Nearest Neighbor) or "FF" (Forward Fill).
     """
