@@ -38,28 +38,34 @@ The script uses `uv` to handle dependencies automatically via PEP 723 metadata.
 Verify API connectivity and authentication:
 
 ```bash
-./immich_fixer.py --check-conn
+./immich_tz_fixer.py --check-conn
 ```
 
 ### Dry Run (Recommended)
 Analyze a specific date range and preview changes without modifying the database:
 
 ```bash
-./immich_fixer.py --taken-after 2024-01-01 --taken-before 2024-12-31 --interpolate --method FF --dry-run
+./immich_tz_fixer.py --taken-after 2024-01-01 --taken-before 2024-12-31 --interpolate --method FF --dry-run
 ```
 
 ### Applying Fixes
 Apply timezone corrections to all assets within a range:
 
 ```bash
-./immich_fixer.py --taken-after 2023-05-19 --fix
+./immich_tz_fixer.py --taken-after 2023-05-19 --fix
+```
+
+Or to all files:
+
+```bash
+./immich_tz_fixer.py --interpolate --fix
 ```
 
 ### Target Specific File
 Process a single asset by its original filename:
 
 ```bash
-./immich_fixer.py --filename "IMG_20260202_1800.jpg" --fix
+./immich_tz_fixer.py --filename "IMG_20260202_1800.jpg" --fix
 ```
 
 ## Technical Architecture
